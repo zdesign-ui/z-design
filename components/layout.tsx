@@ -1,3 +1,3 @@
-export const Layout = props => {
+export const Layout = (props: any) => {
 
 }
