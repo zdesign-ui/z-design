@@ -1,18 +1,22 @@
-import { ReactChild, ReactChildren } from "react";
-
-interface LayoutProps {
-  children: ReactChild | ReactChildren
-}
-
-/** 
- * If need to pass flat arrays of elements use below expression:
- * children: ReactChild | ReactChild[] | ReactChildren | ReactChildren[]
+/**
+ * Reference:
+ * - https://fettblog.eu/typescript-react/children/
+ * - https://stackoverflow.com/questions/53688899/typescript-and-react-children-type
+ * - https://medium.com/quick-code/nextjs-with-typescript-integration-and-example-dd2e13da668b
  */
 
-export default function Layout({ children }: LayoutProps) {
+import { ReactNode } from 'react';
+
+interface LayoutProps {
+  children: ReactNode
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
       {{ children }}
     </div>
   )
 }
+
+export default Layout
