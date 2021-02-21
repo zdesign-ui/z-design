@@ -5,10 +5,6 @@
 module.exports = {
   /* config options here */
   basePath: '', // default base path: `/`
-
-  /** 
-   * https://nextjs.org/docs/api-reference/next.config.js/custom-page-extensions
-   */
   pageExtensions: ['mdx', 'jsx', 'js', 'ts', 'tsx'],
 
   /**
