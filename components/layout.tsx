@@ -6,15 +6,26 @@
  */
 
 import { ReactNode } from 'react';
-
+import Header from './header';
+import Footer from './footer';
 interface LayoutProps {
-  children: ReactNode
+  children: ReactNode,
+  hasHeader?: boolean,
+  hasFooter?: boolean
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, hasHeader=true, hasFooter=true }: LayoutProps) => {
+  console.log(hasHeader, hasFooter)
+  const header = () => hasHeader ? <Header /> : ''
+  // console.log(header)
+
+  const footer = () => hasFooter ? <Footer /> : ''
+  // console.log(footer)
   return (
     <div>
+      <Header />
       {children}
+      <Footer />
     </div>
   )
 }
