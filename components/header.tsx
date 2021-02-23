@@ -1,5 +1,9 @@
+import Sticky from './sticky/sticky';
+
 export default function Header() {
   return (
-    <div>Header</div>
+    <Sticky top={60}>
+      <div>Header</div>
+    </Sticky>
   )
 }
