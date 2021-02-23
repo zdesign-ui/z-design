@@ -1,6 +1,7 @@
 /**
  * REFERENCE:
- * https://annacoding.com/article/2fIvvTzulEFKPmU1CU018y/How-to-use-React-Hooks-to-create-sticky-header-or-React-components
+ * - https://annacoding.com/article/2fIvvTzulEFKPmU1CU018y/How-to-use-React-Hooks-to-create-sticky-header-or-React-components
+ * - https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
  */
 import React, { useState, useEffect, useRef, ReactChild } from 'react'
 
