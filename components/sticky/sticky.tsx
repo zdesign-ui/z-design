@@ -3,16 +3,16 @@
  * - https://annacoding.com/article/2fIvvTzulEFKPmU1CU018y/How-to-use-React-Hooks-to-create-sticky-header-or-React-components
  * - https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
  */
-import React, { useState, useEffect, useRef, ReactChild } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 interface StickyProps {
-  child: ReactChild,
+  child?: React.ReactChild,
   top: number
 }
 
 const Sticky: React.FunctionComponent<StickyProps> = (child, top) => {
   const [isSticky, setSticky] = useState<boolean>(false)
-  const ref = useRef('sticky')
+  const ref = useRef(null)
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -22,9 +22,11 @@ const Sticky: React.FunctionComponent<StickyProps> = (child, top) => {
   }, [])
 
   const handleScroll = () => {
-    if (ref && ref.current && ref.current.getBoundingClientRect()) {
-      setSticky(ref.current.getBoundingClientRect().top <= top)
-    }
+    console.log('---===>>', ref)
+    //  setSticky(true)
+    // if (ref && ref.current && ref.current.getBoundingClientRect()) {
+    //   setSticky(ref.current.getBoundingClientRect().top <= top)
+    // }
   }
 
   return (
