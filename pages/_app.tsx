@@ -22,12 +22,10 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    // <Layout>
-    <>
+    <Layout>
       <TopProgressBar />
-      <Component {...pageProps} />
-    </>  
-    // </Layout>
+      <Component {...pageProps} /> 
+    </Layout>
   )
 }
 
