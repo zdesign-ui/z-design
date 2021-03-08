@@ -3,14 +3,14 @@
  * - https://annacoding.com/article/2fIvvTzulEFKPmU1CU018y/How-to-use-React-Hooks-to-create-sticky-header-or-React-components
  * - https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
  */
-import React, { useState, useEffect, useRef } from 'react'
+import { ReactNode, useState, useEffect, useRef } from 'react'
 
 interface StickyProps {
-  child?: React.ReactChild,
+  children?: ReactNode,
   top: number
 }
 
-const Sticky: React.FunctionComponent<StickyProps> = (child, top) => {
+const Sticky: React.FunctionComponent<StickyProps> = (children, top) => {
   const [isSticky, setSticky] = useState<boolean>(false)
   const ref = useRef(null)
 
@@ -32,7 +32,8 @@ const Sticky: React.FunctionComponent<StickyProps> = (child, top) => {
   return (
     <div className={`stick__wrapper ${isSticky && 'sticky'}`} ref={ref}>
       <div className="stick--inner">
-        {child}
+        Header
+        {/* {children} */}
       </div>
     </div>
   )
